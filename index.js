@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv').config()
 
 //initializations 
-require('./env_config').initEnv()
+// require('./env_config').initEnv()
 const app = express()
 
 // import routes
