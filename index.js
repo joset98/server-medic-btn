@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const dotenv = require('dotenv').config()
 
 //initializations 
@@ -7,7 +7,7 @@ const dotenv = require('dotenv').config()
 const app = express()
 
 // import routes
-const userRoutes =  require('./src/routes/users')
+// const userRoutes =  require('./src/routes/users')
 
 //settings
 const PORT = process.env.port || 8080;
@@ -19,11 +19,10 @@ const PORT = process.env.port || 8080;
 // app.use('/api/v1', require('./controllers/api_v1'));
 
 // Middlewares
-app.use(express.urlencoded({ extended:true }))
+// app.use(express.urlencoded({ extended:true }))
 
 // Routes
 // app.use('/api/v1/users', userRoutes)
-app.use('/api/v1/users', userRoutes)
 
 app.get('/', (req, res)  => {
     res.send('Hello world')
