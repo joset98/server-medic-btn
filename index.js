@@ -27,5 +27,5 @@ app.use('/api/v1/users', userRoutes)
 // starting server
 app.listen(PORT, () => {
     console.log(process.env)
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at http://localhost:${PORT}`);
 })
