@@ -10,7 +10,7 @@ const authUser = async ({ email, password }) => {
         const isConfirmPassword = await compare(user.password, password);
         if (!isConfirmPassword) throw 'Contraseña no coincide, No Permitido'; 
         
-        const token = jwt.sign({_id: user.id}, process.env.TOKEN_SECRET)
+        const token = jwt.sign({_id: user.id}, process.env.TOKEN_SECRET || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
         console.log(token)
         return token;
     } catch (error) {
