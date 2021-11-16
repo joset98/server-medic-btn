@@ -17,6 +17,7 @@ pool.getConnection((err, connection) => {
         if (err.code === 'ER_ACCESS_DENIED_ERROR') {
             console.error(err.sqlMessage);
         }
+        console.log(err);
         return ;
     }
 

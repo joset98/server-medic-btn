@@ -10,7 +10,7 @@ const app = express()
 const userRoutes =  require('./src/routes/users')
 
 //settings
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 8080;
 // parse application/x-www-form-urlencoded
     // app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
@@ -26,6 +26,10 @@ app.use('/api/v1/users', userRoutes)
 
 // starting server
 app.listen(PORT, () => {
-    console.log(process.env)
     console.log(`Example app listening at http://localhost:${PORT}`);
 })
+
+// DB_USER VYQzR986qW
+// DB_NAME =VYQzR986qW
+// passGkIM2uFTKB
+
