@@ -22,7 +22,12 @@ const PORT = process.env.port || 8080;
 app.use(express.urlencoded({ extended:true }))
 
 // Routes
+// app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/users', userRoutes)
+
+app.get('/', (req, res)  => {
+    res.send('Hello world')
+})
 
 // starting server
 app.listen(PORT, () => {
