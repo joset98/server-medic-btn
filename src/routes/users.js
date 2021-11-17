@@ -1,7 +1,7 @@
 const { Router } = require('express');
 
 const {showUser, create} = require('../controllers/UsersController');
-const { signin, login } = require('../controllers/AuthController');
+const { signup, login } = require('../controllers/AuthController');
 const verifyToken  = require('../middleware/verifyToken')
 
 const router = Router();
@@ -15,7 +15,7 @@ router.get('/test-user', verifyToken, (req, res)  => {
     res.send('sending response to test');
 })
 // router.post('/user', (req, res)  => create(req, res))
-router.post('/signin', (req, res)  => signin(req, res))
+router.post('/signup', (req, res)  => signup(req, res))
 router.post('/login', (req, res)  => login(req, res))
 
 module.exports = router;

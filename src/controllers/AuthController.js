@@ -9,15 +9,16 @@ const login = async (req, res) => {
 
     try {
         const authToken = await authUser(credentials);
-        res.header('auth-token').send(`user login success ${authToken}`);
+        res.header('auth-token', authToken).send(`user login success ${authToken}`);
     } catch (error) {
         console.log(error)
         res.status(500).send('there was an error, user cannot login');
     }
 }
 
-const signin = async (req, res) => {
+const signup = async (req, res) => {
     const {username, password} = req.body; 
+    console.log('body')
     console.log(req.body)
     const newUser = {
         username,
@@ -25,8 +26,9 @@ const signin = async (req, res) => {
     };
     
     try {
-        await userRegistration(newUser);
-        res.send('user created');
+        const authToken = await userRegistration(newUser);
+        res.header('auth-token', authToken).send('user created');
+
     } catch (error) {
         console.log(error)
         res.status(500).send('there was an error, user not created');
@@ -47,6 +49,6 @@ const logout = async (req, res) => {
 
 module.exports = {
     login,
-    signin,
+    signup,
     logout
 }

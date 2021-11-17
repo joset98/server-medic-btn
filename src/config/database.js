@@ -2,9 +2,9 @@
 module.exports = {
     database:{
         connectionLimit : 10,
-        host            : process.env.DB_HOST || 'http://remotemysql.com/',
-        user            : process.env.DB_USER || 'VYQzR986qW',
-        password        : process.env.DB_PASSWORD || 'GkIM2uFTKB',
-        database        : process.env.DB_NAME || 'VYQzR986qW'
+        host            : process.env.DB_HOST || 'db4free.net',
+        user            : process.env.DB_USER || 'medic_jt',
+        password        : process.env.DB_PASSWORD || 'WmEMHt96df62CnL',
+        database        : process.env.DB_NAME || 'db_medictest'
     }
 }
